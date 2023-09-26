@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">latihan01</database>
+</source>
+<canvas>
+<table tablename="jenis_produk" alias="" left="226" top="33" width="150" height="113" />
+<table tablename="pembeli" alias="" left="507" top="19" width="150" height="113" />
+<table tablename="penjualan" alias="" left="790" top="120" width="150" height="113" />
+<table tablename="produk" alias="" left="17" top="172" width="150" height="113" />
+<table tablename="stok" alias="" left="307" top="301" width="150" height="113" />
+<table tablename="toko" alias="" left="661" top="264" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "penjualan" alias = "">PEM_ID</from>
+<to tablename = "pembeli" alias = "">ID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "produk" alias = "">JEN_ID</from>
+<to tablename = "jenis_produk" alias = "">ID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "penjualan" alias = "">PRO_ID</from>
+<to tablename = "produk" alias = "">ID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "stok" alias = "">PRO_ID</from>
+<to tablename = "produk" alias = "">ID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "produk" alias = "">TOK_ID</from>
+<to tablename = "stok" alias = "">TOK_ID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "produk" alias = "">PRO_ID</from>
+<to tablename = "stok" alias = "">PRO_ID</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "stok" alias = "">TOK_ID</from>
+<to tablename = "toko" alias = "">ID</to>
+</join>
+</canvas>
+<grid>
+</grid>
+</querybuilder>
